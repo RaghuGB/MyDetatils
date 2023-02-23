@@ -21,6 +21,7 @@ public class UserController {
 	 @RequestMapping("/hello")  
 	    public String display(ModelMap m)  
 	    {  
+		 System.out.println("hello");
 		 UserDetails userDetails=new UserDetails();
 		 userDetails.setEmail("");
 		 userDetails.setPhone("");
