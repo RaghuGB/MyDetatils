@@ -1,6 +1,10 @@
 package mydetails.model;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
@@ -16,16 +20,18 @@ import lombok.Setter;
 @AllArgsConstructor
 @Setter
 @Getter
+@Entity
 public class UserDetails {
 	 public UserDetails() {
 	}
+	 @Id
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 private int userid;
 	 @NotEmpty
      private String user;
-
      @NotEmpty
      @Email
      private String email;        
-
      @NotEmpty(message = "Phone should not be blank.")
      @Size(min = 10,max = 10)
      private String phone;

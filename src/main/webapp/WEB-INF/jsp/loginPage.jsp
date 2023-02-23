@@ -14,6 +14,16 @@
 <body>
 <form:form action="login" modelAttribute="userDetails">
 <table>
+
+<tr>
+    <td><font face="verdana" size="2px">UserID</font></td>
+    <td>:</td>
+    <td>
+    <font face="verdana" size="2">
+    <form:input path="userid" /> <form:errors path="userid"></form:errors>
+    </font>
+    </td>
+</tr>
 <tr>
     <td><font face="verdana" size="2px">User</font></td>
     <td>:</td>

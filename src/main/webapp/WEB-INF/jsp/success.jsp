@@ -15,6 +15,7 @@ You Entered<br>
 </font>
 
 <table>
+    <tr><td>UserId</td><td>${lfobj.userid}</td></tr>
     <tr><td>Email</td><td>${lfobj.email}</td></tr>
     <tr><td>Phone</td><td>${lfobj.phone}</td></tr>
     <tr><td>Web site</td><td>${lfobj.blog}</td></tr>
