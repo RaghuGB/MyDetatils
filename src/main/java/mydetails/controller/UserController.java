@@ -1,5 +1,6 @@
 package mydetails.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -7,17 +8,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import mydetails.model.UserDetails;
+import mydetails.services.UserDetailsServices;
 
 @Controller
 public class UserController {
-/*
-	@RequestMapping("/hello")
-    public String helloWorld(ModelMap model) {
-		 UserDetails ud = new UserDetails();
-		 model.addAttribute("userDetails",ud);
-		 return "loginPage";            
-}
-	*/
+
+	
+	@Autowired(required=true)
+	UserDetailsServices userDetailsServices;
+	
 	 @RequestMapping("/hello")  
 	    public String display(ModelMap m)  
 	    {  
@@ -33,19 +32,13 @@ public class UserController {
 	 
     @RequestMapping("/login")
     public String loginCheck(@Validated UserDetails userDetails, BindingResult result, ModelMap model) {
-        if (result.hasErrors()) {
+       /* if (result.hasErrors()) {
             return "loginPage";
-        } else {
+        } else {*/
+        	 userDetailsServices.save(userDetails);
             model.addAttribute("lfobj", userDetails);
             return "success";
         }
     }
 	
 	
-	
-	
-	
-	
-	
-	
-}

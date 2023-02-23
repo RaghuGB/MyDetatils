@@ -1,5 +1,8 @@
 package mydetails.services;
 
-public class UserDetailsServices {
+import mydetails.model.UserDetails;
 
+public interface UserDetailsServices 
+{
+   void save(UserDetails userDetails);
 }
